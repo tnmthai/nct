@@ -1,27 +1,133 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Business Information</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Add Babel Standalone for in-browser transpilation -->
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-  <script type="importmap">
-{
-  "imports": {
-    "react": "https://aistudiocdn.com/react@^19.1.1",
-    "react-dom/": "https://aistudiocdn.com/react-dom@^19.1.1/",
-    "react/": "https://aistudiocdn.com/react@^19.1.1/"
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Nhà Của Trúc — Thông tin</title>
+  <meta name="description" content="Thông tin liên hệ và thông tin cơ bản của Nhà Của Trúc tại Gò Vấp, TP. Hồ Chí Minh"> 
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#f6f7fb;--card:#ffffff;--muted:#6b7280;--accent:#0f766e;--accent-2:#064e3b}
+    *{box-sizing:border-box}
+    body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;line-height:1.5;margin:0;background:var(--bg);color:#0f172a}
+    .container{max-width:980px;margin:40px auto;padding:20px}
+    .card{background:var(--card);border-radius:12px;padding:24px;box-shadow:0 6px 24px rgba(12,15,30,0.06)}
+    header{display:flex;gap:20px;align-items:center}
+    .logo{width:84px;height:84px;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:26px}
+    h1{margin:0;font-size:20px}
+    .meta{color:var(--muted);font-size:14px;margin-top:6px}
+    .badges{margin-left:auto;display:flex;gap:8px}
+    .badge{padding:8px 12px;border-radius:999px;font-weight:600;font-size:13px}
+    .badge.closed{background:#fee2e2;color:#991b1b}
+    .badge.open{background:#dcfce7;color:#166534}
+    .grid{display:grid;grid-template-columns:1fr 320px;gap:20px;margin-top:20px}
+    .section{margin-bottom:18px}
+    .rating{display:flex;align-items:center;gap:8px}
+    .stars{color:#f59e0b;font-weight:700}
+    .price{padding:6px 10px;border-radius:8px;background:#f3f4f6;display:inline-block}
+    a.link{color:var(--accent);text-decoration:none;font-weight:600}
+    .contact-list{display:flex;flex-direction:column;gap:10px}
+    .contact-item{display:flex;gap:12px;align-items:center}
+    .cta{display:flex;flex-direction:column;gap:10px;margin-top:12px}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:10px;border:0;background:var(--accent);color:#fff;font-weight:600;cursor:pointer;text-decoration:none}
+    .btn.ghost{background:transparent;color:var(--accent);border:1px solid rgba(15,118,110,0.12)}
+    .small{font-size:13px;color:var(--muted)}
+    footer{margin-top:18px;font-size:13px;color:var(--muted)}
+    @media (max-width:860px){.grid{grid-template-columns:1fr}.badges{margin-left:0}header{flex-direction:row;align-items:center}}
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Nhà Của Trúc",
+    "telephone": "+84 90 279 11 54",
+    "email": "truchoang2803@gmail.com",
+    "url": "https://nhacuatruc.net",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "688/93/82 Quang Trung",
+      "addressLocality": "Gò Vấp",
+      "addressRegion": "Ho Chi Minh City",
+      "postalCode": "70000",
+      "addressCountry": "VN"
+    },
+    "aggregateRating": {"@type":"AggregateRating","ratingValue":"5","reviewCount":"13"}
   }
-}
-</script>
-<link rel="stylesheet" href="/index.css">
+  </script>
 </head>
-  <body>
-    <div id="root"></div>
-    <!-- Update script tag to be processed by Babel for JSX and TypeScript -->
-    <script type="text/babel" data-presets="react,typescript" src="/index.tsx"></script>
-  <script type="module" src="/index.tsx"></script>
+<body>
+  <main class="container">
+    <div class="card">
+      <header>
+        <div class="logo">TR</div>
+        <div>
+          <h1>Nhà Của Trúc</h1>
+          <div class="meta">688/93/82 Quang Trung, Gò Vấp, Ho Chi Minh City, 70000</div>
+          <div class="meta">Khu vực cung cấp: Quận Gò Vấp · Thành phố Hồ Chí Minh</div>
+        </div>
+        <div class="badges">
+          <div class="badge closed">Đang đóng cửa</div>
+        </div>
+      </header>
+
+      <div class="grid">
+        <section>
+          <div class="section">
+            <div class="rating">
+              <div class="stars">★★★★★</div>
+              <div>
+                <div style="font-weight:700">100% đề xuất</div>
+                <div class="small">(13 lượt đánh giá)</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="section">
+            <div><span class="price">$$</span></div>
+          </div>
+
+          <div class="section">
+            <h3 style="margin:0 0 8px 0">Liên kết</h3>
+            <div><a class="link" href="https://nhacuatruc.net" target="_blank" rel="noopener">nhacuatruc.net</a></div>
+          </div>
+
+          <div class="section">
+            <h3 style="margin:0 0 8px 0">Thông tin liên hệ</h3>
+            <div class="contact-list">
+              <div class="contact-item"><strong>Điện thoại</strong><span class="small">+84 90 279 11 54</span></div>
+              <div class="contact-item"><strong>Email</strong><span class="small">truchoang2803@gmail.com</span></div>
+              <div class="contact-item"><strong>Messenger</strong><span class="small">Nhà Của Trúc</span></div>
+            </div>
+
+            <div class="cta">
+              <a class="btn" href="tel:+84902791154">Gọi ngay</a>
+              <a class="btn" href="mailto:truchoang2803@gmail.com">Gửi email</a>
+              <a class="btn ghost" href="https://www.google.com/maps/search/688%2F93%2F82+Quang+Trung,+G%C3%B2+V%E1%BA%AFp,+Ho+Chi+Minh+City" target="_blank" rel="noopener">Mở bản đồ</a>
+            </div>
+          </div>
+
+          <footer>
+            <div>Đã lưu: thông tin cơ bản và liên hệ. Cập nhật lần cuối: <time datetime="2025-09-30">30/09/2025</time></div>
+          </footer>
+        </section>
+
+        <aside>
+          <div style="background:#f8fafc;border-radius:10px;padding:16px">
+            <h3 style="margin-top:0">Tổng quan nhanh</h3>
+            <p class="small" style="margin:8px 0">Lượt đánh giá: <strong>100% đề xuất</strong> (13 lượt). Mức giá: <strong>$$</strong>. Giờ hoạt động hiện tại: <strong>Đang đóng cửa</strong>.</p>
+
+            <h4 style="margin:12px 0 6px 0">Địa chỉ</h4>
+            <p class="small">688/93/82 Quang Trung, Gò Vấp, Ho Chi Minh City, Vietnam, 70000</p>
+
+            <h4 style="margin:12px 0 6px 0">Kết nối nhanh</h4>
+            <div style="display:flex;flex-direction:column;gap:8px">
+              <a class="btn" href="https://nhacuatruc.net" target="_blank" rel="noopener">Trang web</a>
+              <a class="btn" href="https://www.facebook.com/" target="_blank" rel="noopener">Facebook / Messenger</a>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </main>
 </body>
 </html>
